@@ -1,0 +1,3 @@
+[submodule "bundles/TwigView"]
+    path = bundles/TwigView
+    url = http://github.com/akhawaja/TwigView.git
