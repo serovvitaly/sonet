@@ -269,7 +269,7 @@
 .register {width:175px; float:right;margin-right:30px;height:230px;}
 	.register p { position: relative; margin: 20px;}
 	.register p br {display: none;}
-	.register .button {margin:0px 55px 100px 20px;}
+	.register .button {margin:0px 30px 100px 20px;}
 .pass_recover { width:420px;float:left; margin:20px 0 20px 20px;}
 	.pass_recover p{color:#777;font-family: 'Lato', sans-serif; font-size:11px; text-align:center;}
 .social_and_search {float:left;width:420px; height:90px; margin:0 0 20px 20px;border-bottom:1px solid #bfbfbf;border-top:1px solid #bfbfbf;}
