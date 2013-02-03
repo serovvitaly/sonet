@@ -1,0 +1,81 @@
+{% extends 'admin/goods/index.twig' %}
+
+
+{% block content %}
+
+<div class="btn-toolbar" style="margin-top: 0;">
+  <a class="btn btn-success" href="#" onclick="submitForm_AddGood(this); return false;" type="button" data-loading-text="сохранение ...">Сохранить</a>
+  <a class="btn" href="/admin/goods">Отмена</a>
+</div>
+
+{% block form %}
+<form action="/admin/goods/save" id="form-AddGood">
+  <div class="input-prepend">
+    <input type="text" name="name" placeholder="Наименование" style="width: 400px;">
+  </div>
+  <div class="input-append">
+    <textarea cols="1" rows="1" name="description" placeholder="Описание" style="width: 400px; height: 120px;"></textarea>
+  </div>
+  <div class="input-prepend">
+    <input type="text" placeholder="Артикул" name="articul">
+  </div>
+  <div class="input-prepend">
+    <input type="text" placeholder="Цена" name="price">
+    <span class="add-on">руб.</span>
+  </div>
+  
+  <fieldset>
+    <legend>Атрибуты</legend>
+    <div>
+      <a href="#" class="btn" onclick="addAttribute(); return false;">Добавить атрибут</a>
+    </div>
+    <div id="attributes-list"></div>
+    
+  </fieldset>
+  
+</form>
+{% endblock form %}
+
+<script>
+
+var stateful_element;
+
+$(document).ready(function(){
+    $('#form-AddGood').ajaxForm({
+        dataType: 'json', 
+        beforeSubmit: function(formData, jqForm, options){
+            
+            var data = {};
+            
+            $.each(formData, function(index, item){
+                data[item.name] = item.value;
+            });
+            
+            console.log(data);
+                    
+            sonet.api('add_good', {data:data}, function(response){
+                $(stateful_element).button('reset');
+                
+                if (typeof response.result == 'number' && response.result > 0) {
+                    window.location = '/admin/goods';
+                }
+                
+            });
+            
+            return false;
+        }         
+    });
+});
+
+function submitForm_AddGood(el){
+    stateful_element = el;
+    $(el).button('loading');
+    $('#form-AddGood').submit();
+}
+
+function addAttribute(){
+    $('#attributes-list').append('<div>foo</div>');
+}
+</script>
+
+{% endblock content %}

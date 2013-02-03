@@ -2,9 +2,11 @@
 
 namespace Api;
 
+use \Laravel\Validator;
+
 class Main
 {
-    public function hello($page = 5){return 'page6666-'.$page;}
+    public function hello($page = 5){ sleep(5); return 'page6666-'.$page;}
     
     
     public function apps_get($id)
@@ -20,26 +22,47 @@ class Main
     }
     
     
-    public function products_load($page = 1)
+    public function add_good($data = NULL)
     {
-        $output = array();
-        
-        $products = \Laravel\Auth::user()->products()->take(20)->get();
-        
-        if (count($products) > 0) {
-            foreach ($products AS $product) {
-                $output[] = array(
-                    'id'          => $product->id,
-                    'name'        => $product->name,
-                    'price'       => number_format($product->base_price, 2),
-                    'vendor'      => $product->vendor,
-                    'picture'     => $product->picture,
-                    'description' => $product->description,
-                );
-            }
+        if (!$data OR !isset($data['data']) OR count($data['data']) < 1) {
+            return false;
         }
         
-        return $output;
+        $output = NULL;
+        
+        $data = (array) $data['data'];
+        
+        $_rules = array(
+            'name'        => 'required',
+            'description' => 'required',
+            'articul'     => 'required',
+            'price'       => 'required|numeric',
+        );
+        
+        $validation = Validator::make($data, $_rules);
+        
+        if ($validation->fails()) {
+            return $validation->errors;
+        }
+        
+        if (isset($data['id']) AND $data['id'] > 0) {
+            $good = \Good::find($data['id']);
+            
+            unset($data['id']);
+            
+            if (count($data) > 0) {
+                foreach ($data AS $key => $value) {
+                    $good->$key = $value;
+                }
+            }
+            
+            $good->touch();
+        }
+        else {
+            $good = \Good::create($data);
+        }        
+        
+        return $good->id;
     }
     
 }

@@ -8,13 +8,40 @@
   
   <link rel="stylesheet" type="text/css" href="/bundles/bootstrap/css/bootstrap.css">
   
+  <script type="text/javascript" src="/vendors/jform/jquery.form.js"></script>
+  
+  <script type="text/javascript" src="/vendors/json-rpc/jquery.jsonrpc.js"></script>
+  <script>
+      $(document).ready(function(){
+          $.jsonRPC.setup({
+              endPoint: '/api'
+          });
+      });
+      
+      var sonet = {
+          api: function(call, params, success, failure, error){
+              $.jsonRPC.request(call, {
+                  params: params,
+                  success: success ? success : function(response){console.log('SUCCESS:');console.log(response)},
+                  error: error ? error : function(response){console.log('ERROR:');console.log(response)}
+              });
+          }
+      }
+  </script>
+  
 </head>
 <body>
-
   {% include 'admin/_topmenu.twig' %}
-
-  {% block content %}
-  {% endblock %}
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span2">
+        {% block sidebar %}{% endblock %}
+      </div>
+      <div class="span10">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
   
   <script type="text/javascript" src="/bundles/bootstrap/js/bootstrap.min.js"></script>
 </body>

@@ -1,0 +1,56 @@
+{% extends 'admin/_layout.twig' %}
+
+
+{% block sidebar %}
+
+  <a href="/admin/goods/add" class="btn">Добавить товар</a>
+  
+{% endblock %}
+
+{% block content %}
+
+<div class="btn-toolbar" style="margin-top: 0;">
+  <div class="btn-group">
+      <a href="#" class="btn"><i class="icon-ok"></i></a>
+      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="icon-check"></i> Выделенные <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Опубликовать</a></li>
+        <li><a href="#">Скрыть</a></li>
+        <li><a href="#">Удалить</a></li>
+      </ul>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>ID</th>
+    <th>Наименование</th>
+    <th>Артикул</th>
+    <th>Описание</th>
+    <th>Цена</th>
+    <th style="width: 110px;"></th>
+  </tr>
+  </thead>
+  <tbody>
+{% for good in goods %}
+  <tr id="good-item-{{ good.id }}">
+    <td><input type="checkbox"></td>
+    <td>{{ good.id }}</td>
+    <td>{{ good.name }}</td>
+    <td>{{ good.articul }}</td>
+    <td>{{ good.description }}</td>
+    <td>{{ good.price }}</td>
+    <td>
+      <a class="label label-info" href="/admin/goods/edit/{{ good.id }}">Изменить</a>
+      <a class="label label-important" href="/admin/goods/delete/{{ good.id }}" onclick="if (!confirm('Точно удалить?')) return false;">Удалить</a>
+    </td>
+  </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

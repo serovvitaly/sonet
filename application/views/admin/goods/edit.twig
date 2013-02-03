@@ -1,0 +1,30 @@
+{% extends 'admin/goods/add.twig' %}
+
+{% block form %}
+<form action="/admin/goods/save" id="form-AddGood">
+  <input type="hidden" name="id" value="{{ id }}">
+  <div class="input-prepend">
+    <input type="text" name="name" placeholder="Наименование" style="width: 400px;" value="{{ name }}">
+  </div>
+  <div class="input-append">
+    <textarea cols="1" rows="1" name="description" placeholder="Описание" style="width: 400px; height: 120px;">{{ description }}</textarea>
+  </div>
+  <div class="input-prepend">
+    <input type="text" placeholder="Артикул" name="articul" value="{{ articul }}">
+  </div>
+  <div class="input-prepend">
+    <input type="text" placeholder="Цена" name="price" value="{{ price }}">
+    <span class="add-on">руб.</span>
+  </div>
+  
+  <fieldset>
+    <legend>Атрибуты</legend>
+    <div>
+      <a href="#" class="btn" onclick="addAttribute(); return false;">Добавить атрибут</a>
+    </div>
+    <div id="attributes-list"></div>
+    
+  </fieldset>
+  
+</form>
+{% endblock %}
