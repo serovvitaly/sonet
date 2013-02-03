@@ -1,0 +1,173 @@
+{% extends 'home/index.twig' %}
+
+{% block content %}
+
+<div class="post_container">
+    
+    <div class="post">
+    
+        <p class="breadcrumbs"><a href="#" title="lorem">Home</a> &raquo; <a href="#" title="lorem">Graphic Design</a> &raquo; <a href="#" title="lorem">25 Adobe Photoshop actions for Photography Touch-Up and Enhancement</a></p>
+    
+        <h1>{{ name }}</h1>
+        
+        <div class="like">
+            
+            <div id="fb-root"></div>
+            
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "../../connect.facebook.net/en_US/all.js#xfbml=1&appId=167757287776";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            </script>
+
+            <div class="fb-like" data-href="http://www.facebook.com/wpchief" data-send="false" data-width="450" data-show-faces="false" data-action="like"></div>
+        
+        </div>
+        
+        <div class="meta">Posted by <a href="#" title="lorem">Karl Rumenige</a> | June 12, 2012 <a href="#" class="comments" title="lorem">10</a></div>
+        
+        <div class="post_content">
+        
+            <p>
+            
+            <img src="images/500x375.gif" class="right" alt="lorem"/>
+            
+            {{ description }} 
+            
+            </p>
+            
+            <div class="columns">
+            
+                <div class="su-column su-column-1-2 su-column-style-0"><span class="dropcap_line">S</span>ed sed arcu sed sem consequat ultricies vitae sit amet ipsum. Curabitur quis diam sapien, et ornare felis. In eu mollis tellus. Sed et hendrerit ipsum. Nulla tincidunt lacus ut mi viverra fringilla. Nulla hendrerit suscipit massa et condimentum tincidunt vehicula. </div>
+                <div class="su-column su-column-1-2 su-column-last su-column-style-0"><span class="dropcap_line">C</span>urabitur dictum magna mi, iaculis bibendum tortor. Suspendisse potenti. Aenean felis arcu, suscipit vitae pulvinar interdum, dictum at augue. Nulla ultricies massa. Mauris mollis justo in ipsum aliquet molestie. Vestibulum non neque magna pulvinar tempor molestie.</div>
+                <div class="su-spacer"></div>
+                <div class="su-column su-column-1-3 su-column-style-0"><h3 class="dotted">Dolor sit amet</h3>Consectetur adipiscing elit. Aenean purus orci, iaculis sit amet rutrum in, dictum vel odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. </div>
+                <div class="su-column su-column-1-3 su-column-style-0"><h3 class="dotted">Praesent nec dolor est</h3> Mauris placerat est ut diam cursus ornare. Nullam ornare felis ut velit tincidunt rhoncus. Suspendisse potenti. Ut non ligula nec metus accumsan laoreet. Maecenas luctus dolor a mauris aliquet euismod.</div>
+                <div class="su-column su-column-1-3 su-column-last su-column-style-0"><h3 class="dotted">Cras tincidunt congue tortor</h3> vitae pellentesque dolor dignissim in. Vivamus eu lobortis lectus. Etiam pulvinar tempor molestie. Quisque eleifend, augue ac gravida convallis, felis massa congue ipsum, sit amet imperdiet ipsum. </div>
+            </div>
+            
+        
+        </div>
+        
+        <!-- COMMENT LIST start here 
+        ================================================== -->
+        
+        <div id="comments-list">
+
+            <h2>2 Responses</h2>
+            
+            <ul>
+            
+                <li class="comment">
+                
+                    <div class="comment-body">
+                    
+                        <div class="comment-author">
+                        
+                            <img alt="" src="images/avatar.png" class="avatar"/>
+                            <h3 class="name">Lara Flaber</h3>
+                            <p class="comment-meta">February 3, 2012 at 11:13 pm</p>
+                            
+                        </div>
+                        
+                        <p>Dolor sit amet, consectetur adipiscing elit. Aenean purus orci, iaculis sit amet rutrum in, dictum vel odio. Vestibulum ante ipsum primis in faucibus orci luctus 
+                        et ultrices posuere cubilia Curae; Suspendisse potenti. Quisque convallis quam ut lacus malesuada vitae tristique odio faucibus. 
+                        </p>
+                        
+                    </div>
+                    
+                    <ul class="children">
+                    
+                        <li class="comment odd">
+                        
+                            <div class="comment-body">
+                            
+                                <div class="comment-author">
+                                
+                                    <img alt="" src="images/avatar.png" class="avatar"/>
+                                    <h3 class="name">Admin</h3>
+                                    <p class="comment-meta">May 8, 2012 at 11:27 pm</p>
+                                
+                                </div>
+                                
+                                <p>Donec elit risus, consequat quis mattis ac, auctor nec massa. Aliquam eu tortor neque, quis vulputate nisi. </p>
+
+                            </div>
+                        
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+            
+            </ul>
+
+        </div>    
+
+        <!-- COMMENT FORM start here 
+        ================================================== -->
+
+        <div id="respond">
+        
+            <h2>Leave a Reply</h2>
+
+            <form action="#" method="post" id="commentform">
+            
+                <div class="form_row">
+                
+                    <div class="form_item">
+                    
+                        <label for="author">Name</label>
+                        <input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+                        
+                    </div>
+                    
+                    <div class="form_item">
+                    
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+                        
+                    </div>
+                    
+                    <div class="form_item">
+                    
+                        <label for="url">Website</label>
+                        <input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+                        
+                    </div>
+                
+                </div>
+                
+                <div class="form_row">
+                
+                    <div class="form_item_comment">
+                    
+                        <label for="comment">Comment</label>
+                        <textarea name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea>
+                        
+                    </div>
+                
+                </div >
+                
+                <div class="form_row">
+                
+                    <div class="submit_comment">
+                    
+                        <input name="submit" type="submit" class="button" tabindex="5" value="Submit Comment"/>
+                    
+                    </div>
+                
+                </div>
+        
+            </form>
+        
+        </div>
+    
+    </div>
+
+</div>
+
+{% endblock %}
