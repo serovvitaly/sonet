@@ -35,6 +35,20 @@
 
 Route::controller(Controller::detect());
 
+
+/**
+* Перехватывает запросы клиента JSON-RPC и передаем их серверу 
+*/
+Route::post('api', function(){
+    
+    $server = new Junior\Server(new Api\Main);
+    
+    $server->process();
+    
+    return;
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers

@@ -44,6 +44,25 @@ return array(
                 'TwigView\\View' => '(:bundle)/view.php',
             )
         )
+    ),
+    
+    'junior' => array(
+        'location' => 'Junior',
+        'autoloads' => array(
+            'map' => array(
+                'Junior\\Server' => '(:bundle)/Server.php',
+                'Junior\\Serverside\\Request' => '(:bundle)/Serverside/Request.php'
+            )
+        )
+    ),
+    
+    'api' => array(
+        'location' => 'api',
+        'autoloads' => array(
+            'map' => array(
+                'Api\\Main' => '(:bundle)/Main.php'
+            )
+        )
     )
 
 );
