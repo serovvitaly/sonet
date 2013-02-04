@@ -1624,12 +1624,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bee198', end
  */
 
 .portfolio-thumbs {
-	width: 930px;
+	width: 1024px;
 }
 
 .portfolio-thumbs li.item {
 	float: left;
-	width: 204px; height: 230px;
+	width: 232px;
+    height: 230px;
 	margin: 0 24px 0 0;
 }
 

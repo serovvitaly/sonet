@@ -31,13 +31,13 @@
 }
 
 #page-text header#title {
-	height: 110px;
-	padding: 0 0 0 85px;
+	height: 80px;
+	padding: 0;
 }
 
 #page-text header#title h1 {
 	padding: 0 0 .25em 0;
-	color: white;
+	color: #B62F2F;
 }
 
 #page-text article {
@@ -99,7 +99,7 @@
 #page-text.document .pricing-boxes,
 #page-text.document.portfolio .tabs,
 #page-text.document.portfolio #portfolio-view {
-	padding-left: 85px;
+	
 }
 
 #page-text.document #col-left article ul.arrows-line,
@@ -116,7 +116,7 @@
 #page-text.document > #col-left > article > h1:first-child + p,
 #page-text.document > #col-left > article > h4:first-child + p,
 #page-text.document > #col-left > article > .tabs {
-	background: url(../img/icon-doc.png) no-repeat 15px 5px;
+	
 }
 
 #page-text.contact #col-left article > h4 {
@@ -136,7 +136,8 @@
 	background: url(../img/arrow-right-white.png) no-repeat right 5px;
 	display: inline;
 	padding: 0 9px;
-	color: #fba6a2;
+	color: #B3AAA9;
+    font-size: 11px;
 }
 
 .breadcrumbs li:first-child {
@@ -154,7 +155,7 @@
 
 .breadcrumbs a {
 	font-size: 11px;
-	color: #ffc555;
+	color: #4D4D4D;
 }
 
 
