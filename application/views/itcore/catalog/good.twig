@@ -1,0 +1,135 @@
+{% extends 'home/index.twig' %}
+
+{% block content %}
+
+<div id="col-left">
+        
+            <header id="title">
+                <h1>Portfolio</h1>
+                <nav class="breadcrumbs">
+                    <ul>
+                        <li class="home">
+                            <a href="#">IT Core</a>
+                        </li>
+                        <li>
+                            <a href="#" class="home">About us</a>
+                        </li>
+                        <li>Overview</li>
+                    </ul>
+                </nav>
+            </header>
+    
+            <article>
+
+                <section id="portfolio-view" class="clear">
+                
+                    <section class="portfolio-description">
+                        <small class="category2">Photography</small>
+                        <p class="title">{{ name }}</p>
+                        <p>{{ description }}</p>
+                        
+                        <dl class="portfolio-details clear">
+                            <dt>Client:</dt>
+                            <dd>Company name</dd>
+                            <dt>Type:</dt>
+                            <dd>Category</dd>
+                            <dt class="last">Link:</dt>
+                            <dd class="last"><a href="#">website.com</a></dd>
+                        </dl>
+                    </section>
+                    
+                    <section class="portfolio-gallery">
+                        <div id="portfolio-big" class="vignette vignette2 radius5 ">
+                            <a class="arrow next"></a>
+                            <a class="arrow prev" style="left: -120px;"></a>
+                            <img src="img/examples/portfolio-view-1.jpg" alt="" width="640" height="366">
+                            <div class="background"></div>
+                        </div>
+
+                        <div class="slider clear" id="portfolio-thumbs">
+                            <div class="content">
+                                <ul>
+                                    <li class="a current">
+                                        <a href="img/examples/portfolio-view-1.jpg" class="vignette vignette2 radius5">
+                                            <span class="frame radius5"></span>
+                                            <img src="img/examples/portfolio-view-1-thumb.jpg" alt="" width="121" height="92">
+                                        </a>
+                                    </li>
+                                    <li class="b">
+                                        <a href="img/examples/portfolio-view-2.jpg" class="vignette vignette2 radius5">
+                                            <span class="frame radius5"></span>
+                                            <img src="img/examples/portfolio-view-2-thumb.jpg" alt="" width="121" height="92">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="img/examples/portfolio-view-3.jpg" class="vignette vignette2 radius5">
+                                            <span class="frame radius5"></span>
+                                            <img src="img/examples/portfolio-view-3-thumb.jpg" alt="" width="121" height="92">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="img/examples/portfolio-view-4.jpg" class="vignette vignette2 radius5">
+                                            <span class="frame radius5"></span>
+                                            <img src="img/examples/portfolio-view-4-thumb.jpg" alt="" width="121" height="92">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="img/examples/portfolio-view-5.jpg" class="vignette vignette2 radius5">
+                                            <span class="frame radius5"></span>
+                                            <img src="img/examples/portfolio-view-5-thumb.jpg" alt="" width="121" height="92">
+                                        </a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="img/examples/portfolio-view-6.jpg" class="vignette vignette2 radius5">
+                                            <span class="frame radius5"></span>
+                                            <img src="img/examples/portfolio-view-6-thumb.jpg" alt="" width="121" height="92">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="img/examples/portfolio-view-7.jpg" class="vignette vignette2 radius5">
+                                            <span class="frame radius5"></span>
+                                            <img src="img/examples/portfolio-view-7-thumb.jpg" alt="" width="121" height="92">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="img/examples/portfolio-view-8.jpg" class="vignette vignette2 radius5">
+                                            <span class="frame radius5"></span>
+                                            <img src="img/examples/portfolio-view-8-thumb.jpg" alt="" width="121" height="92">
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </div><!-- .content -->
+                            <nav class="arrows">
+                                <ul>
+                                    <li class="prev current"></li>
+                                    <li class="next" style="display: list-item;"></li>
+                                </ul>
+                            </nav>
+                        <nav class="dots"><ul><li class="on current"></li><li></li></ul></nav></div><!-- .slide -->
+                    </section><!-- .portfolio-gallery -->
+                
+                </section><!-- .portfolio-view -->
+
+                
+                
+                <div class="article-summary clear">
+                    <ul>
+                        <li class="mail">
+                            <a href="#">Send to the friend</a>
+                        </li>
+                        <li class="print">
+                            <a href="#">Print this page</a>
+                        </li>
+                    </ul>
+                    <div class="clear"></div>
+                    <a href="#" class="button-back">back</a>
+                </div>
+                
+            </article>
+    
+        </div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+<ul class="portfolio-thumbs">
+
+{% for good in goods %}
+    <li class="item">
+        <a href="/catalog/good/{{ good.id }}" class="thumb-item photo-framed clear">
+            <div class="cloudnumber">25</div>
+            <div class="frame"></div>
+            <div class="view-project radius5"><span>Подробнее</span></div>
+            <div class="photo vignette vignette2 radius5">
+                <img src="/source/catalog/big/big_tc_37823be32b874891b0f42e0fe24d03e4.jpg" alt="portfolio-1" width="204" height="150" />
+            </div>
+        </a>
+        <div class="thumb-name">
+            <a href="/bundles/itcore/10-portfolio-view.htm">{{ good.name }}</a>
+        </div>
+        <div class="thumb-category">
+            <span class="category">Ширина: {{ good.width }}</span>
+        </div>
+    </li>
+{% endfor %}
+
+</ul>
+
+
+{{ goods.paginate }}
+
+<section class="pagination clear">
+    <ul>
+        <li class="prev">
+            <a href="/bundles/itcore/#"></a>
+        </li>
+        <li class="current-menu-item">
+            <a href="/bundles/itcore/#">1</a>
+        </li>
+        <li>
+            <a href="/bundles/itcore/#">2</a>
+        </li>
+        <li>
+            <a href="/bundles/itcore/#">3</a>
+        </li>
+        <li>
+            <a href="/bundles/itcore/#">4</a>
+        </li>
+        <li>
+            <a href="/bundles/itcore/#">5</a>
+        </li>
+        <li class="next">
+            <a href="/bundles/itcore/#"></a>
+        </li>
+    </ul>
+</section>

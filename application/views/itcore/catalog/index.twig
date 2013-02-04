@@ -1,0 +1,76 @@
+{% extends 'itcore/_layout.twig' %}
+
+
+
+{% block header %}
+  {% include 'base/header/header2.twig' %}
+  {% include 'base/header/menu.twig' %}
+{% endblock %}
+
+
+
+{% block sidebar %}
+   
+  {% include 'base/sidebar/social_login.twig' %}
+  {% include 'base/sidebar/login_register.twig' %}
+  {% include 'base/sidebar/article_widget.twig' %}
+  {% include 'base/sidebar/tab_widget.twig' %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div id="col-left">
+        
+    <header id="title">
+        <h1>КАТАЛОГ ТОВАРОВ</h1>
+        <nav class="breadcrumbs">
+            <ul>
+                <li class="home">
+                    <a href="/">Главная</a>
+                </li>
+                <li>Каталог</li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+
+        <div class="tabs clear">
+            <ul class="tabs-menu">
+            {% for cat in cats %}
+                <li{% if loop.first %} class="current"{% endif %}>{{ cat.name }}</li>
+            {% endfor %}
+            </ul>
+            
+            <ul class="tabs-content clear">
+            {% for cat in cats %}
+                <li class="content">{% include 'itcore/catalog/_tab.twig' with { 'goods' : cat.goods_array } %}</li>
+            {% endfor %}
+            </ul>
+            
+        </div>
+
+
+
+        
+        
+        <div class="article-summary clear">
+            <ul>
+                <li class="mail">
+                    <a href="/bundles/itcore/#">Send to the friend</a>
+                </li>
+                <li class="print">
+                    <a href="/bundles/itcore/#">Print this page</a>
+                </li>
+            </ul>
+            <div class="clear"></div>
+            <a href="/bundles/itcore/#" class="button-back">back</a>
+        </div>
+        
+    </article>
+
+</div>
+
+{% endblock %}
