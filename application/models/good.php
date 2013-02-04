@@ -4,8 +4,6 @@
 class Good extends Eloquent
 {
     
-    public $paginate = 500006;
-    
     public function width()
     {
         return $this->attr_cloth_width;
@@ -14,12 +12,6 @@ class Good extends Eloquent
     public function sources()
     {
         return $this->has_many('Source');
-    }
-    
-    
-    public function paginate()
-    {
-        return 4000;
     }
     
 }

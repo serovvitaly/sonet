@@ -36,6 +36,17 @@ class Paginator {
 	 * @var int
 	 */
 	public $per_page;
+    
+    public $html_classes = array(
+        'active'        => 'active',
+        'previous_page' => NULL,
+        'next_page'     => NULL,
+    );
+    
+    public $html_text = array(
+        'previous_page' => NULL,
+        'next_page'     => NULL,
+    ); 
 
 	/**
 	 * The values that should be appended to the end of the link query strings.
@@ -287,9 +298,12 @@ class Paginator {
 	 */
 	protected function element($element, $page, $text, $disabled)
 	{
-		$class = "{$element}_page";
+		$class = $this->html_classes["{$element}_page"] ? $this->html_classes["{$element}_page"] : "{$element}_page";
 
-		if (is_null($text))
+        if ($this->html_text["{$element}_page"]) {
+            $text = $this->html_text["{$element}_page"];
+        }
+		elseif (is_null($text))
 		{
 			$text = Lang::line("pagination.{$element}")->get($this->language);
 		}
@@ -349,7 +363,7 @@ class Paginator {
 		{
 			if ($this->page == $page)
 			{
-				$pages[] = '<li class="active"><a href="#">'.$page.'</a></li>';
+				$pages[] = '<li class="' . $this->html_classes['active'] . '"><a href="#">'.$page.'</a></li>';
 			}
 			else
 			{

@@ -22,30 +22,8 @@
 </ul>
 
 
-{{ goods.paginate }}
-
 <section class="pagination clear">
-    <ul>
-        <li class="prev">
-            <a href="/bundles/itcore/#"></a>
-        </li>
-        <li class="current-menu-item">
-            <a href="/bundles/itcore/#">1</a>
-        </li>
-        <li>
-            <a href="/bundles/itcore/#">2</a>
-        </li>
-        <li>
-            <a href="/bundles/itcore/#">3</a>
-        </li>
-        <li>
-            <a href="/bundles/itcore/#">4</a>
-        </li>
-        <li>
-            <a href="/bundles/itcore/#">5</a>
-        </li>
-        <li class="next">
-            <a href="/bundles/itcore/#"></a>
-        </li>
-    </ul>
+
+{{ paginate | raw }}
+
 </section>

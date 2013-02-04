@@ -6,7 +6,7 @@ class Catalog_Controller extends Base_Controller
     {
         $categories = Category::all();
         
-        return View::make('itcore.catalog.index', array('cats' => $categories));
+        return View::make('itcore.catalog.index', array('cats' => $categories, 'current_cat' => Input::get('ct', 1)));
     }
     
     

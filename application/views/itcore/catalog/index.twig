@@ -36,17 +36,17 @@
     </header>
 
     <article>
-
+        
         <div class="tabs clear">
             <ul class="tabs-menu">
             {% for cat in cats %}
-                <li{% if loop.first %} class="current"{% endif %}>{{ cat.name }}</li>
+                <li{% if cat.id == current_cat %} class="current"{% endif %}>{{ cat.name }}</li>
             {% endfor %}
             </ul>
             
             <ul class="tabs-content clear">
             {% for cat in cats %}
-                <li class="content">{% include 'itcore/catalog/_tab.twig' with { 'goods' : cat.goods_array } %}</li>
+                <li class="content">{% include 'itcore/catalog/_tab.twig' with { 'goods' : cat.goods_array, 'paginate' : cat.paginate } %}</li>
             {% endfor %}
             </ul>
             
